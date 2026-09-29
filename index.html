@@ -1,0 +1,1486 @@
+<```html
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Жанар Секеркожа | Portfolio</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #08080c;
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(151, 61, 255, .20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 60%,
+            rgba(255, 55, 205, .14),
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    background: rgba(8,8,12,.75);
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid #22222a;
+}
+
+nav {
+    width: 90%;
+    max-width: 1200px;
+    height: 80px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #b967ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #999;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #c56cff;
+}
+
+.contact-button {
+    padding: 10px 18px;
+
+    border: 1px solid #333;
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.contact-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 140px 7% 80px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 70px;
+
+    align-items: center;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 15px;
+
+    border: 1px solid #30263b;
+    border-radius: 50px;
+
+    color: #aaa;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.status span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #65ff78;
+
+    box-shadow: 0 0 15px #65ff78;
+}
+
+.hero small {
+    color: #888;
+    letter-spacing: 5px;
+}
+
+h1 {
+    font-size: clamp(60px, 9vw, 120px);
+    line-height: .9;
+
+    letter-spacing: -6px;
+
+    margin: 20px 0;
+}
+
+h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #b967ff,
+            #ff48d4
+        );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.profession {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.profession span {
+    color: #b967ff;
+}
+
+.profession b {
+    color: #777;
+    font-weight: normal;
+}
+
+.description {
+    max-width: 580px;
+
+    color: #888;
+
+    margin: 25px 0 35px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.button {
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.primary {
+    background: white;
+    color: black;
+}
+
+.primary:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 40px rgba(255,255,255,.2);
+}
+
+.secondary {
+    border: 1px solid #333;
+}
+
+.secondary:hover {
+    border-color: #b967ff;
+    color: #b967ff;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.visual {
+    height: 550px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.profile-card {
+    width: 340px;
+    height: 450px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.14),
+            rgba(255,255,255,.02)
+        );
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.7);
+
+    transform: rotate(5deg);
+
+    transition: .5s;
+
+    z-index: 2;
+}
+
+.profile-card:hover {
+    transform:
+        rotate(0deg)
+        translateY(-15px);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+
+    color: #777;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.avatar {
+    width: 190px;
+    height: 190px;
+
+    margin: 55px auto 30px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 100px;
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7029e8,
+            #ed42ff
+        );
+
+    box-shadow:
+        0 0 70px rgba(185,103,255,.5);
+}
+
+.profile-card h2 {
+    font-size: 40px;
+}
+
+.profile-card p {
+    color: #777;
+}
+
+.card-bottom {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #666;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* Floating cards */
+
+.floating {
+    position: absolute;
+
+    padding: 15px 20px;
+
+    border: 1px solid #333;
+    border-radius: 15px;
+
+    background: rgba(20,20,25,.8);
+
+    backdrop-filter: blur(15px);
+
+    animation: floating 4s ease-in-out infinite;
+
+    z-index: 5;
+}
+
+.float-one {
+    top: 70px;
+    right: 10px;
+}
+
+.float-two {
+    bottom: 70px;
+    left: 10px;
+
+    animation-delay: 1s;
+}
+
+.floating strong {
+    color: #b967ff;
+}
+
+.floating small {
+    display: block;
+
+    color: #777;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 130px 0;
+}
+
+.section-number {
+    color: #b967ff;
+
+    font-size: 12px;
+    letter-spacing: 4px;
+
+    margin-bottom: 50px;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+.section h2 {
+    font-size: clamp(50px, 7vw, 85px);
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+}
+
+.section h2 span {
+    color: #b967ff;
+}
+
+.about-text {
+    color: #888;
+    line-height: 1.9;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-text strong {
+    color: #fff;
+}
+
+.stats {
+    display: flex;
+    gap: 50px;
+
+    margin-top: 40px;
+}
+
+.stats strong {
+    display: block;
+
+    font-size: 35px;
+
+    color: #b967ff;
+}
+
+.stats span {
+    color: #666;
+    font-size: 12px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-section {
+    width: 100%;
+    max-width: none;
+
+    padding-left: 7%;
+    padding-right: 7%;
+
+    background: #0c0c11;
+}
+
+.skills {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 60px;
+}
+
+.skill {
+    min-height: 350px;
+
+    padding: 30px;
+
+    border: 1px solid #24242c;
+    border-radius: 20px;
+
+    background: #09090d;
+
+    transition: .4s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+
+    border-color: #713c91;
+
+    box-shadow:
+        0 20px 50px rgba(185,103,255,.08);
+}
+
+.skill-number {
+    color: #444;
+}
+
+.skill-icon {
+    margin-top: 70px;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    color: #b967ff;
+}
+
+.skill h3 {
+    margin-top: 25px;
+
+    font-size: 24px;
+}
+
+.skill p {
+    color: #666;
+
+    font-size: 13px;
+
+    margin-top: 10px;
+}
+
+.progress {
+    height: 2px;
+
+    background: #222;
+
+    margin-top: 30px;
+}
+
+.progress span {
+    display: block;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b3cff,
+            #ff49d5
+        );
+}
+
+
+/* =========================
+   GOAL
+========================= */
+
+.goal-card {
+    padding: 50px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17121d,
+            #0b0b0f
+        );
+
+    border: 1px solid #32253d;
+}
+
+.quote {
+    font-size: 80px;
+
+    color: #b967ff;
+
+    line-height: .5;
+
+    margin-bottom: 30px;
+}
+
+.goal-card p {
+    color: #888;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.goal-card small {
+    color: #555;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    width: 100%;
+    max-width: none;
+
+    padding-left: 7%;
+    padding-right: 7%;
+
+    background: #0b0b10;
+}
+
+.contact-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+.contact-description {
+    color: #777;
+
+    max-width: 450px;
+
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.input label {
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.input input,
+.input textarea {
+    width: 100%;
+
+    padding: 15px 0;
+
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    border-bottom: 1px solid #29292f;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+.input input:focus,
+.input textarea:focus {
+    border-color: #b967ff;
+}
+
+.input textarea {
+    resize: none;
+}
+
+.send {
+    align-self: flex-start;
+
+    padding: 16px 28px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: black;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.send:hover {
+    background: #b967ff;
+    color: white;
+
+    transform: translateY(-5px);
+}
+
+#formMessage {
+    min-height: 20px;
+
+    color: #b967ff;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 40px 7% 0;
+
+    background: #08080c;
+}
+
+.footer-top {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 11px;
+}
+
+.footer-logo {
+    color: white;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: #b967ff;
+}
+
+.footer-big {
+    margin-top: 70px;
+
+    text-align: center;
+
+    font-size: 20vw;
+
+    font-weight: bold;
+
+    line-height: .7;
+
+    color: #111116;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-content,
+    .section-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        gap: 50px;
+    }
+
+    .visual {
+        height: 500px;
+    }
+
+    .skills {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-grid,
+    .contact-grid {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    h1 {
+        font-size: 65px;
+
+        letter-spacing: -4px;
+    }
+
+    .buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .profile-card {
+        width: 300px;
+    }
+
+    .visual {
+        transform: scale(.85);
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        gap: 25px;
+    }
+
+    .goal-card {
+        padding: 30px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<a href="#" class="logo">
+    J<span>.</span>
+</a>
+
+<div class="nav-links">
+
+<a href="#about">Мен туралы</a>
+<a href="#skills">Дағдылар</a>
+<a href="#goals">Мақсатым</a>
+<a href="#contact">Байланыс</a>
+
+</div>
+
+<a href="#contact" class="contact-button">
+    Contact ↗
+</a>
+
+</nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div>
+
+<div class="status">
+<span></span>
+ҚАЗІР ONLINE
+</div>
+
+<small>СӘЛЕМ, МЕН —</small>
+
+<h1>
+Жанар
+<span>Секеркожа</span>
+</h1>
+
+<div class="profession">
+<span>Ақпараттық жүйелер</span>
+&nbsp; — &nbsp;
+<b>Студенті</b>
+</div>
+
+<p class="description">
+IT әлемін зерттеп жүрген жас маманмын.
+Заманауи технологияларға қызығамын,
+жаңа нәрселер үйреніп, креативті жобалар
+жасағанды ұнатамын.
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="button primary">
+Мен туралы →
+</a>
+
+<a href="#contact" class="button secondary">
+Байланысу
+</a>
+
+</div>
+
+</div>
+
+
+
+<div class="visual">
+
+<div class="profile-card">
+
+<div class="card-top">
+<span>PORTFOLIO</span>
+<span>2026</span>
+</div>
+
+<div class="avatar">
+Ж
+</div>
+
+<h2>Жанар</h2>
+
+<p>Information Systems</p>
+
+<div class="card-bottom">
+<span>01</span>
+<span>CREATIVE</span>
+</div>
+
+</div>
+
+
+<div class="floating float-one">
+<strong>✦ CREATIVE</strong>
+<small>PORTFOLIO</small>
+</div>
+
+
+<div class="floating float-two">
+<strong>IT</strong>
+<small>STUDENT</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+<div class="section-number">
+01 — ABOUT ME
+</div>
+
+<div class="section-grid">
+
+<div>
+
+<h2>
+Менің<br>
+<span>тарихым.</span>
+</h2>
+
+</div>
+
+
+<div class="about-text">
+
+<p>
+Менің есімім —
+<strong>Жанар Секеркожа.</strong>
+Мен «Ақпараттық жүйелер»
+мамандығында білім алып жатқан
+студентпін.
+</p>
+
+<p>
+Технология әлемі мен үшін
+әрдайым жаңа мүмкіндіктерге
+толы қызықты әлем.
+Бағдарламалау, веб-технологиялар
+және цифрлық жобаларға
+қызығушылығым бар.
+</p>
+
+<p>
+Әр жаңа жоба арқылы өзімді
+дамытқым және жаңа тәжірибе
+жинағым келеді.
+</p>
+
+
+<div class="stats">
+
+<div>
+<strong>01</strong>
+<span>Креатив</span>
+</div>
+
+<div>
+<strong>02</strong>
+<span>Технология</span>
+</div>
+
+<div>
+<strong>03</strong>
+<span>Даму</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills" class="section skills-section">
+
+<div class="section-number">
+02 — MY SKILLS
+</div>
+
+<h2>
+Менің
+<span>дағдыларым.</span>
+</h2>
+
+
+<div class="skills">
+
+
+<div class="skill">
+
+<div class="skill-number">
+01
+</div>
+
+<div class="skill-icon">
+&lt;/&gt;
+</div>
+
+<h3>HTML</h3>
+
+<p>
+Веб-беттің құрылымын
+жасау және семантикалық
+HTML қолдану.
+</p>
+
+<div class="progress">
+<span style="width:90%"></span>
+</div>
+
+</div>
+
+
+
+<div class="skill">
+
+<div class="skill-number">
+02
+</div>
+
+<div class="skill-icon">
+✦
+</div>
+
+<h3>CSS</h3>
+
+<p>
+Заманауи дизайн,
+анимация, Flexbox
+және Grid.
+</p>
+
+<div class="progress">
+<span style="width:85%"></span>
+</div>
+
+</div>
+
+
+
+<div class="skill">
+
+<div class="skill-number">
+03
+</div>
+
+<div class="skill-icon">
+JS
+</div>
+
+<h3>JavaScript</h3>
+
+<p>
+Сайтқа интерактивті
+элементтер мен
+функциялар қосу.
+</p>
+
+<div class="progress">
+<span style="width:70%"></span>
+</div>
+
+</div>
+
+
+
+<div class="skill">
+
+<div class="skill-number">
+04
+</div>
+
+<div class="skill-icon">
+AI
+</div>
+
+<h3>IT & AI</h3>
+
+<p>
+Ақпараттық технологиялар
+мен жасанды интеллектке
+қызығушылық.
+</p>
+
+<div class="progress">
+<span style="width:75%"></span>
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- GOALS -->
+
+<section id="goals" class="section">
+
+<div class="section-number">
+03 — MY FUTURE
+</div>
+
+
+<div class="section-grid">
+
+<div>
+
+<h2>
+Болашаққа<br>
+<span>қарай.</span>
+</h2>
+
+</div>
+
+
+<div class="goal-card">
+
+<div class="quote">
+“
+</div>
+
+<p>
+Менің мақсатым —
+ақпараттық жүйелер саласында
+кәсіби маман болу және
+заманауи технологияларды
+жақсы меңгеру.
+</p>
+
+<p>
+Болашақта өз жобаларымды
+жасап, IT саласында үлкен
+тәжірибе жинағым келеді.
+</p>
+
+<hr style="
+border:none;
+border-top:1px solid #29202f;
+margin:35px 0;
+">
+
+<small>
+JANAR SEKERKOZHA
+</small>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact-section">
+
+<div class="contact-grid">
+
+<div>
+
+<div class="section-number">
+04 — CONTACT
+</div>
+
+<h2>
+Бірге<br>
+<span>жасайық.</span>
+</h2>
+
+<p class="contact-description">
+Сұрақтарыңыз немесе қызықты
+идеяңыз болса, төмендегі
+форма арқылы хабарлама
+қалдырыңыз.
+</p>
+
+</div>
+
+
+<form id="contactForm">
+
+
+<div class="input">
+
+<label>АТЫҢЫЗ</label>
+
+<input
+type="text"
+id="name"
+placeholder="Жанар"
+>
+
+</div>
+
+
+<div class="input">
+
+<label>EMAIL</label>
+
+<input
+type="email"
+id="email"
+placeholder="example@gmail.com"
+>
+
+</div>
+
+
+<div class="input">
+
+<label>ХАБАРЛАМА</label>
+
+<textarea
+id="message"
+rows="5"
+placeholder="Сәлем, Жанар..."
+></textarea>
+
+</div>
+
+
+<button class="send" type="submit">
+ХАБАРЛАМА ЖІБЕРУ ↗
+</button>
+
+<p id="formMessage"></p>
+
+</form>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<div class="footer-top">
+
+<div class="footer-logo">
+J<span>.</span>
+</div>
+
+<p>
+© 2026 Жанар Секеркожа
+</p>
+
+<p>
+INFORMATION SYSTEMS
+</p>
+
+</div>
+
+
+<div class="footer-big">
+JANAR
+</div>
+
+</footer>
+
+
+
+<script>
+
+const form =
+document.getElementById("contactForm");
+
+const formMessage =
+document.getElementById("formMessage");
+
+
+form.addEventListener(
+"submit",
+function(event) {
+
+event.preventDefault();
+
+
+const name =
+document.getElementById("name")
+.value.trim();
+
+const email =
+document.getElementById("email")
+.value.trim();
+
+const message =
+document.getElementById("message")
+.value.trim();
+
+
+if (!name || !email || !message) {
+
+formMessage.textContent =
+"⚠ Барлық жолдарды толтырыңыз.";
+
+formMessage.style.color =
+"#ff5c7a";
+
+return;
+
+}
+
+
+formMessage.textContent =
+`✓ Рақмет, ${name}! Хабарламаңыз қабылданды.`;
+
+formMessage.style.color =
+"#b967ff";
+
+
+form.reset();
+
+});
+
+</script>
+
+
+</body>
+</html>
+```
